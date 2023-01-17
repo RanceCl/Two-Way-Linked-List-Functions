@@ -1,0 +1,120 @@
+Roderick "Rance" White
+ECE 2230, MP2, Fall 2020
+testinput.txt
+
+Test script to show a few simple tests for the sequential list ADT.
+
+TEST 1:  Add three entries to list.  
+
+ALERT
+111
+100
+1
+1500
+2
+1
+1
+1
+ALERT 
+551 
+500
+2
+1501
+5
+2
+5
+2
+ALERT 
+100 
+111
+3
+1500
+2
+1
+1
+3
+
+TEST 2: Print the list and verify three entries are sorted 
+
+PRINT
+
+TEST 3:  Add a second and a third 111 entry in the list
+
+ALERT 
+111
+101
+4
+1504
+2
+1
+9
+4
+ALERT 
+111
+105
+5
+1504
+2
+1
+9
+5
+
+TEST 4: Print the list, verify three entrys for 111, and five total entries
+
+PRINT
+
+TEST 5: Scan for attack on with alert 111 and then print details
+
+SCANGEN 2
+LISTGEN 111
+LISTIP 1500
+
+TEST 6: Remove the last element in the list. Then removed records with Dest IP 1500
+
+DELGEN 551
+PRINT
+DELIP 1500
+PRINT
+
+TEST 7: Add to the unsorted list.  The third item should replace the second
+
+ADDREAR
+223
+222
+5
+2020
+2
+1
+9
+6
+ADDREAR
+322
+223
+5
+2021
+2
+1
+9
+7
+ADDREAR
+352
+223
+5
+2021
+2
+1
+9
+8
+
+PRINTQ
+
+TEST 8: delete both records in the unsorted list
+
+RMFRONT
+RMFRONT
+STATS
+
+TEST 9: Quit
+
+QUIT
+

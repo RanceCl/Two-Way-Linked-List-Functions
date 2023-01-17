@@ -1,0 +1,15 @@
+lab2TestPlan
+Roderick "Rance" White
+roderiw
+ECE 2230 Fall 2020
+MP2
+
+
+It was determined that the functions in llist.c were the most important to start off with, the next file to work on being ids_support.c, as the functions in llist.c support ids_support.c which in turn supports lab2.c. 
+
+
+First the llist_construct, llist_insert, and llist_destruct functions were completed and tested, as these three were all necessary for the others to work. The llist_access and llist_remove were then constructed and tested with no errors. Then the llist_insertsorted was completed and tested, with no errors. Most functions in llist.c were based on the similar functions in the previous project.
+
+The ids_support.c functions were then each completed and tested. During testing for functions that called the sorted adding and removing functions, there seemed to be yet unnoticed errors in the llist.c functions as well that had been missed during testing, these mostly being issues where the code would go out of bounds during adding and removing functions near the beginning and end, and where the remove function didn't free removed element before returning the data pointer.
+
+After this, it was noticed that the alerts with the same gen id were not in the correct positions for the sorted list. This was due to the sorted list function, at that point, comparing the new alert based only upon the alert at the previous index, meaning that function would verify that the new alert should be ahead of the smaller id, but it would not verify if the alerts behind it were the same. This was fixed by having the function compare based on the alerts that come after the current index.
